@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="EventHandler.fs" />
+    <Compile Include="CommandHandler.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
