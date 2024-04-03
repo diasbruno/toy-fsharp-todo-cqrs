@@ -1,0 +1,11 @@
+GET https://localhost:5001/todos
+
+##
+
+POST https://localhost:5001/todo
+Content-Type: application/json
+
+{"Title":"Finish this post"}
+
+##
+

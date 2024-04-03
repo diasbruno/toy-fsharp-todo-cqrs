@@ -11,4 +11,12 @@
   <ItemGroup>
     <PackageReference Include="Falco" Version="4.*" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="AllTodos\AllTodos.fsproj" />
+    <ProjectReference Include="Todo\Todo.fsproj" />
+    <ProjectReference Include="CQRS\CQRS.fsproj" />
+    <ProjectReference Include="CreateTodo\CreateTodo.fsproj" />
+    <ProjectReference Include="Database\Database.fsproj" />
+  </ItemGroup>
 </Project>
