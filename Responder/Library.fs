@@ -1,4 +1,4 @@
-﻿namespace Responder
+namespace Responder
 
 open Falco
 open Microsoft.AspNetCore.Http
