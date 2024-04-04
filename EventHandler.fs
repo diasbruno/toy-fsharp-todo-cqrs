@@ -2,6 +2,7 @@ module EventHandler
 
 open FSharpPlus
 open CQRS
+open Database
 open Todo
 open DomainError
 

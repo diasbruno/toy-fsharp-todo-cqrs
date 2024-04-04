@@ -10,7 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CQRS\CQRS.fsproj" />
     <ProjectReference Include="..\Todo\Todo.fsproj" />
     <ProjectReference Include="..\DomainError\DomainError.fsproj" />
   </ItemGroup>

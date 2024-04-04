@@ -2,7 +2,7 @@ namespace ATodo
 
 open Falco
 open Todo
-open CQRS
+open Database
 open DomainError
 open FSharpPlus
 open System

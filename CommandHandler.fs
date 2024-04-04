@@ -3,6 +3,7 @@ module CommandHandler
 open System
 open FSharpPlus
 open CQRS
+open Database
 open Todo
 open DomainError
 
