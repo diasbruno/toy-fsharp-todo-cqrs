@@ -13,7 +13,7 @@ open EventHandler
 
 [<EntryPoint>]
 let main args =
-  let eventSource = (new InMemory<Event>())
+  let eventSource = (new InMemory<Event.Event>())
   let objectSource = (new InMemory<Todo.t>())
   let eventHandler = MailboxProcessor.StartImmediate(eventHandler objectSource)
 

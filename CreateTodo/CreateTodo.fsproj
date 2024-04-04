@@ -15,6 +15,7 @@
     <ProjectReference Include="..\Database\Database.fsproj" />
     <ProjectReference Include="..\DomainError\DomainError.fsproj" />
     <ProjectReference Include="..\Responder\Responder.fsproj" />
+    <ProjectReference Include="..\Command\Command.fsproj" />
   </ItemGroup>
 
   <ItemGroup>

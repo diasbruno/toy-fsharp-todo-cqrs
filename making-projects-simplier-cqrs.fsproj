@@ -22,5 +22,7 @@
     <ProjectReference Include="Database\Database.fsproj" />
     <ProjectReference Include="ATodo\ATodo.fsproj" />
     <ProjectReference Include="Responder\Responder.fsproj" />
+    <ProjectReference Include="Command\Command.fsproj" />
+    <ProjectReference Include="Event\Event.fsproj" />
   </ItemGroup>
 </Project>

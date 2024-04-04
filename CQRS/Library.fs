@@ -15,7 +15,3 @@ module Dispatch =
 
   let noReply (mail: MailboxProcessor<Reply<'a, 'b, 'e>>) a =
     mail.Post(NoReply a)
-
-type Command = CreateTodo of string
-
-type Event = TodoCreated of Guid * string

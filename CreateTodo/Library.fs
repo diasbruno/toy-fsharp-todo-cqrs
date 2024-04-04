@@ -7,6 +7,7 @@ open CQRS
 open DomainError
 open Todo
 open Responder.JsonResponder
+open Command
 
 module CreateTodo =
   type Input = { Title: string }

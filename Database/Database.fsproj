@@ -12,6 +12,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Todo\Todo.fsproj" />
     <ProjectReference Include="..\DomainError\DomainError.fsproj" />
+    <ProjectReference Include="..\Command\Command.fsproj" />
+    <ProjectReference Include="..\Event\Event.fsproj" />
   </ItemGroup>
 
   <ItemGroup>
