@@ -6,6 +6,7 @@ open Falco
 open CQRS
 open DomainError
 open Todo
+open Responder.JsonResponder
 
 module CreateTodo =
   type Input = { Title: string }
@@ -29,10 +30,10 @@ module CreateTodo =
     =
     validate input
     |> Validation.either
-      (fun e -> Response.ofJson e context)
+      (fun _ -> withError Unknown context)
       (fun (command: Command) ->
         Dispatch.sync handler command
-        |> Result.either (fun item -> Response.ofJson item context) (fun _ ->
-          Response.ofJson null context))
+        |> Result.either (fun item -> ok item context) (fun _ ->
+          withError Unknown context))
 
   let responder handler context = Request.mapJson (run handler) context

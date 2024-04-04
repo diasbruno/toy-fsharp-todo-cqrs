@@ -1,3 +1,5 @@
 namespace DomainError
 
-type DomainError = | NotFound
+type DomainError =
+  | NotFound
+  | Unknown

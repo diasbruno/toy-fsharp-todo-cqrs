@@ -21,5 +21,6 @@
     <ProjectReference Include="CreateTodo\CreateTodo.fsproj" />
     <ProjectReference Include="Database\Database.fsproj" />
     <ProjectReference Include="ATodo\ATodo.fsproj" />
+    <ProjectReference Include="Responder\Responder.fsproj" />
   </ItemGroup>
 </Project>

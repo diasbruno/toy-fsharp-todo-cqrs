@@ -1,10 +1,10 @@
 namespace AllTodos
 
 open FSharpPlus
-open Falco
 open CQRS
 open DomainError
 open Todo
+open Responder.JsonResponder
 
 module AllTodos =
   type request = Unit
@@ -15,7 +15,6 @@ module AllTodos =
   let responder (dataStore: DataStore) context =
     dataStore.All
     |> Async.map (
-      Result.either (fun e -> Response.ofJson e context) (fun all ->
-        Response.ofJson all context)
+      Result.either (fun all -> ok all context) (fun e -> withError e context)
     )
     |> Async.RunSynchronously

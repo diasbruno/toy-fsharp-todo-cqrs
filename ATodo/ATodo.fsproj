@@ -13,6 +13,7 @@
     <ProjectReference Include="..\CQRS\CQRS.fsproj" />
     <ProjectReference Include="..\Database\Database.fsproj" />
     <ProjectReference Include="..\Todo\Todo.fsproj" />
+    <ProjectReference Include="..\Responder\Responder.fsproj" />
   </ItemGroup>
 
   <ItemGroup>
