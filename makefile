@@ -1,10 +1,13 @@
 DOTNET=$(shell which dotnet)
 
-build:
-	dotnet build
-
 format:
 	dotnet fantomas .
 
+build: format
+	dotnet build
+
 run:
 	dotnet run
+
+clean:
+	dotnet clean
