@@ -6,6 +6,7 @@ type DataSource<'a, 'e> =
   abstract member All : Async<Result<'a list, 'e>>
   abstract member Count : Async<Result<int, 'e>>
   abstract member Store : 'a -> Async<Result<'a, 'e>>
+  abstract member Find : ('a -> bool) -> Async<Result<'a, 'e>>
 
 type Handler<'a, 'd, 'r, 'e> =
   DataSource<'a, 'e> -> 'd -> Async<Result<'r, 'e>>

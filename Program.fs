@@ -2,6 +2,7 @@ module making_projects_simplier_cqrs.Program
 
 open Falco.Routing
 open Falco.HostBuilder
+open ATodo
 open AllTodos
 open CreateTodo
 open CQRS
@@ -20,7 +21,9 @@ let main args =
     webHost args {
         endpoints
             [ get AllTodos.path (AllTodos.responder objectSource)
-              post CreateTodo.path (CreateTodo.responder commandHandler) ]
+              post CreateTodo.path (CreateTodo.responder commandHandler)
+              get ATodo.path (ATodo.responder objectSource)
+              ]
     }
 
     0

@@ -1,5 +1,6 @@
 namespace Database
 
+open FSharpPlus
 open CQRS
 open DomainError
 
@@ -15,3 +16,9 @@ type InMemory<'a>() =
        do store <- List.append [item] store
        return Ok(item)
      }
+    member this.Find f =
+      async {
+      return match List.tryFind f store with
+             | Some(item) -> Ok(item)
+             | _ -> Error(NotFound)
+      }

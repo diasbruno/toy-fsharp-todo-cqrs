@@ -20,5 +20,6 @@
     <ProjectReference Include="CQRS\CQRS.fsproj" />
     <ProjectReference Include="CreateTodo\CreateTodo.fsproj" />
     <ProjectReference Include="Database\Database.fsproj" />
+    <ProjectReference Include="ATodo\ATodo.fsproj" />
   </ItemGroup>
 </Project>

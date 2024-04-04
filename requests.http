@@ -9,3 +9,6 @@ Content-Type: application/json
 
 ##
 
+:todo-id = 5c34680e-1d96-4058-83bc-fafb7524276d
+
+GET https://localhost:5001/todo/:todo-id
