@@ -11,10 +11,11 @@ module AllTodos =
   type DataStore = DataSource<Todo.t, DomainError>
   let query (source: DataStore) _ = source.All
   let path = "/todos"
+
   let responder (dataStore: DataStore) context =
     dataStore.All
-    |> Async.map (Result.either (fun e ->
-                                 Response.ofJson e context)
-                                (fun all ->
-                                 Response.ofJson all context))
+    |> Async.map (
+      Result.either (fun e -> Response.ofJson e context) (fun all ->
+        Response.ofJson all context)
+    )
     |> Async.RunSynchronously

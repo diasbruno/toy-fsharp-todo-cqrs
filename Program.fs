@@ -13,17 +13,18 @@ open EventHandler
 
 [<EntryPoint>]
 let main args =
-    let eventSource = (new InMemory<Event>())
-    let objectSource = (new InMemory<Todo.t>())
-    let eventHandler = MailboxProcessor.StartImmediate(eventHandler objectSource)
-    let commandHandler = MailboxProcessor.StartImmediate(commandHandler eventSource eventHandler)
+  let eventSource = (new InMemory<Event>())
+  let objectSource = (new InMemory<Todo.t>())
+  let eventHandler = MailboxProcessor.StartImmediate(eventHandler objectSource)
 
-    webHost args {
-        endpoints
-            [ get AllTodos.path (AllTodos.responder objectSource)
-              post CreateTodo.path (CreateTodo.responder commandHandler)
-              get ATodo.path (ATodo.responder objectSource)
-              ]
-    }
+  let commandHandler =
+    MailboxProcessor.StartImmediate(commandHandler eventSource eventHandler)
 
-    0
+  webHost args {
+    endpoints
+      [ get AllTodos.path (AllTodos.responder objectSource)
+        post CreateTodo.path (CreateTodo.responder commandHandler)
+        get ATodo.path (ATodo.responder objectSource) ]
+  }
+
+  0
